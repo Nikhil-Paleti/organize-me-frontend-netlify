@@ -58,8 +58,8 @@ class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       dispatch(login(this.state.username, this.state.password))
         .then(() => {
-          history.push("/profile");
-          // window.location.reload();
+          history.push("/");
+          window.location.reload();
         })
         .catch(() => {
           this.setState({
