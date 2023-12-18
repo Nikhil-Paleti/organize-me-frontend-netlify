@@ -143,13 +143,13 @@ class App extends Component {
                 </li>
               )}
 
-              {/* {(showManagerBoard || showCeoBoard ) && (
+              {(showManagerBoard || showCeoBoard ) && (
                 <li className="nav-item">
                 <Link to={"/manage-orders"} className="nav-link">
                 incoming orders
                   </Link>
                 </li>
-              )} */}
+              )}
               
               {(showManagerBoard || showCeoBoard ) && (
                 <li className="nav-item">
