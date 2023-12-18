@@ -13,11 +13,12 @@ export default class Home extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>Welcome</h3>
+          <img src="public/logo.png" alt="OrganizeMe Logo" style={{ maxWidth: '200px' }}/>
+          <h3>Welcome to OrganizeMe</h3>
         </header>
         <body>
           <p>
-            please login to get started!
+            Your one-stop solution for seamless management of textile manufacturing processes. Efficiently handle order processing, production management, customer engagement, and more. Please login to explore the full potential of OrganizeMe and transform your business operations.
           </p>
         </body>
       </div>
