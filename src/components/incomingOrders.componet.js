@@ -35,6 +35,7 @@ class ManageOrdersPage extends Component {
         this.props.dispatch(updateOrderStatus(orderId, newStatus))
           .then(() => {
             if (newStatus === 'rejected') {
+              this.props.dispatch(listAllProducts());
               // If the order is rejected, return the items to the inventory
               selectedOrder.cart.forEach(item => {
                 const product = products.find(p => p.id === item.productId);
