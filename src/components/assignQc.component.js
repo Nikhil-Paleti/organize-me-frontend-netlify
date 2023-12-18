@@ -83,7 +83,7 @@ class AssignQCPage extends Component {
               type="number" 
               value={quality}
               onChange={(e) => this.setState({ quality: e.target.value })}
-              placeholder="Enter quality value" 
+              placeholder="Value" 
             />
           </Form.Group>
         </Modal.Body>
