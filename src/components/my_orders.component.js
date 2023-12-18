@@ -95,93 +95,109 @@ class MyOrdersPage extends Component {
 
         <div className="">
         
-        <h3>Processing</h3>
+        <div>
+    <h3>Processing</h3>
+    <div className="row">
         {currentUserData.filter(order => order.status === 'placed').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
-            <div className="card mb-3">
-                <div className="card-body">
-                <h5 className="card-title">Order #{order.id}</h5>
-                {/* Other order details */}
-                <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
-                    View Order
-                </Button>
+                <div className="card mb-3">
+                    <div className="card-body">
+                        <h5 className="card-title">Order #{order.id}</h5>
+                        {/* Other order details */}
+                        <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
+                            View Order
+                        </Button>
+                    </div>
                 </div>
             </div>
-            </div>
         ))}
+    </div>
 
-        <h3>Accepted</h3>
+    <h3>Accepted</h3>
+    <div className="row">
         {currentUserData.filter(order => order.status === 'accepted').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
-            <div className="card mb-3">
-                <div className="card-body">
-                <h5 className="card-title">Order #{order.id}</h5>
-                {/* Other order details */}
-                <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
-                    View Order
-                </Button>
+                <div className="card mb-3">
+                    <div className="card-body">
+                        <h5 className="card-title">Order #{order.id}</h5>
+                        {/* Other order details */}
+                        <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
+                            View Order
+                        </Button>
+                    </div>
                 </div>
             </div>
-            </div>
         ))}
+    </div>
 
-        <h3>In production</h3>
+    <h3>In Production</h3>
+    <div className="row">
         {currentUserData.filter(order => order.status === 'in production').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
-            <div className="card mb-3">
-                <div className="card-body">
-                <h5 className="card-title">Order #{order.id}</h5>
-                {/* Other order details */}
-                <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
-                    View Order
-                </Button>
+                <div className="card mb-3">
+                    <div className="card-body">
+                        <h5 className="card-title">Order #{order.id}</h5>
+                        {/* Other order details */}
+                        <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
+                            View Order
+                        </Button>
+                    </div>
                 </div>
             </div>
-            </div>
         ))}
+    </div>
+
+    <h3>QC Complete</h3>
+    <div className="row">
         {currentUserData.filter(order => order.status === 'QC complete').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
-            <div className="card mb-3">
-                <div className="card-body">
-                <h5 className="card-title">Order #{order.id}</h5>
-                {/* Other order details */}
-                <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
-                    View Order
-                </Button>
+                <div className="card mb-3">
+                    <div className="card-body">
+                        <h5 className="card-title">Order #{order.id}</h5>
+                        {/* Other order details */}
+                        <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
+                            View Order
+                        </Button>
+                    </div>
                 </div>
             </div>
-            </div>
         ))}
+    </div>
 
-        <h3>Packed</h3>
+    <h3>Packed</h3>
+    <div className="row">
         {currentUserData.filter(order => order.status === 'Packed').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
-            <div className="card mb-3">
-                <div className="card-body">
-                <h5 className="card-title">Order #{order.id}</h5>
-                {/* Other order details */}
-                <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
-                    View Order
-                </Button>
+                <div className="card mb-3">
+                    <div className="card-body">
+                        <h5 className="card-title">Order #{order.id}</h5>
+                        {/* Other order details */}
+                        <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
+                            View Order
+                        </Button>
+                    </div>
                 </div>
             </div>
-            </div>
         ))}
+    </div>
 
-        <h3>Delivered</h3>
+    <h3>Delivered</h3>
+    <div className="row">
         {currentUserData.filter(order => order.status === 'delivered').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
-            <div className="card mb-3">
-                <div className="card-body">
-                <h5 className="card-title">Order #{order.id}</h5>
-                {/* Other order details */}
-                <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
-                    View Order
-                </Button>
+                <div className="card mb-3">
+                    <div className="card-body">
+                        <h5 className="card-title">Order #{order.id}</h5>
+                        {/* Other order details */}
+                        <Button variant="primary" onClick={() => this.handleViewOrder(order)}>
+                            View Order
+                        </Button>
+                    </div>
                 </div>
             </div>
-            </div>
         ))}
+    </div>
+</div>
 
 
         </div>
