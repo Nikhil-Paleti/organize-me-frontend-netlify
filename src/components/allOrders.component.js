@@ -93,7 +93,7 @@ class AllOrdersPage extends Component {
         <div>
     <h3>Processing</h3>
     <div className="row">
-    {orders.filter(order => order.status === 'placed').length > 0 ? (
+        {orders.filter(order => order.status === 'placed').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
                 <div className="card mb-3">
                     <div className="card-body">
@@ -105,13 +105,12 @@ class AllOrdersPage extends Component {
                     </div>
                 </div>
             </div>
-    ) : <p>No orders found</p>}
-
+        ))}
     </div>
 
     <h3>Accepted</h3>
     <div className="row">
-    {orders.filter(order => order.status === 'accepted').length > 0 ? (
+        {orders.filter(order => order.status === 'accepted').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
                 <div className="card mb-3">
                     <div className="card-body">
@@ -123,12 +122,12 @@ class AllOrdersPage extends Component {
                     </div>
                 </div>
             </div>
-    ) : <p>No orders found</p>}
+        ))}
     </div>
 
     <h3>In Production</h3>
     <div className="row">
-    {orders.filter(order => order.status === 'in production').length > 0 ? (
+        {orders.filter(order => order.status === 'in production').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
                 <div className="card mb-3">
                     <div className="card-body">
@@ -140,12 +139,12 @@ class AllOrdersPage extends Component {
                     </div>
                 </div>
             </div>
-    ) : <p>No orders found</p>}
+        ))}
     </div>
 
     <h3>QC Complete</h3>
     <div className="row">
-    {orders.filter(order => order.status === 'QC complete').length > 0 ? (
+        {orders.filter(order => order.status === 'QC complete').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
                 <div className="card mb-3">
                     <div className="card-body">
@@ -157,12 +156,12 @@ class AllOrdersPage extends Component {
                     </div>
                 </div>
             </div>
-    ) : <p>No orders found</p>}
+        ))}
     </div>
 
     <h3>Packed</h3>
     <div className="row">
-          {orders.filter(order => order.status === 'Packed').length > 0 ? (
+        {orders.filter(order => order.status === 'Packed').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
                 <div className="card mb-3">
                     <div className="card-body">
@@ -174,12 +173,12 @@ class AllOrdersPage extends Component {
                     </div>
                 </div>
             </div>
-    ) : <p>No orders found</p>}
+        ))}
     </div>
 
     <h3>Delivered</h3>
     <div className="row">
-          {orders.filter(order => order.status === 'delivered').length > 0 ? (
+        {orders.filter(order => order.status === 'delivered').map(order => (
             <div key={order.id} className="col-lg-4 col-md-6">
                 <div className="card mb-3">
                     <div className="card-body">
@@ -191,7 +190,7 @@ class AllOrdersPage extends Component {
                     </div>
                 </div>
             </div>
-    ) : <p>No orders found</p>}
+        ))}
     </div>
 </div>
 
