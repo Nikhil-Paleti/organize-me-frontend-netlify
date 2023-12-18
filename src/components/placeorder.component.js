@@ -77,7 +77,7 @@ class PlaceOrderPage extends Component {
                     localStorage.removeItem('cart'); // or localStorage.setItem('cart', JSON.stringify([]));
                     this.setState({ showModal: false }); // Close modal after placing the order
                 });
-                alert(`Order ${orderId} is placed. Please pay \$${totalCost}.`);
+                alert(`Order ${orderId} is placed. Please pay ${totalCost}.`);
             })
             .catch(error => console.error('Order Placement Error:', error));
     }).catch(error => {
