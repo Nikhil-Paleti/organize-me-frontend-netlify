@@ -13,7 +13,7 @@ export default class Home extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
-          <img src="public/logo.png" alt="OrganizeMe Logo" style={{ maxWidth: '200px' }}/>
+          <img src="build/logo.png" alt="OrganizeMe Logo" style={{ maxWidth: '200px' }}/>
           <h3>Welcome to OrganizeMe</h3>
         </header>
         <body>
