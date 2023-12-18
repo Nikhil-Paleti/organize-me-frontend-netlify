@@ -55,32 +55,34 @@ class PlaceOrderPage extends Component {
     const { cart, totalCost } = this.state;
     const user = JSON.parse(localStorage.getItem("user"));
     const customerId = user ? user.myid : null;
-  
-    this.props.dispatch(listAllOrders()).then(() => {
-      const { orders, products } = this.props; // Assuming products are available in props
-      const orderId = orders.length + 1;
-      // const acceptance = "pending";
-      const status = "placed";
-      const feedback = "None";
 
-      this.props.dispatch(addOrder(orderId, customerId, cart, totalCost, status, 0, 0, 0, 0, feedback))
-        .then(() => {
-          // Update each product in the cart
-          cart.forEach(cartItem => {
-            const product = products.find(p => p.id === cartItem.productId);
-            if (product) {
-              const newQuantity = product.quantity - cartItem.quantity;
-              this.props.dispatch(updateProduct(product.id, product.name, product.image, product.description, product.cost, newQuantity));
-            }
-          });
-          this.setState({ cart: this.state.cart.map(item => ({ ...item, quantity: 0 })), showModal: false });
-        //   this.setState({ showModal: false }); // Close modal after placing the order and updating products
-        })
-        .catch(error => console.error('Order Placement Error:', error));
+    this.props.dispatch(listAllOrders()).then(() => {
+        const { orders } = this.props;
+        const orderId = orders.length + 1;
+        const status = "placed";
+        const feedback = "None";
+
+        this.props.dispatch(addOrder(orderId, customerId, cart, totalCost, status, 0, 0, 0, 0, feedback))
+            .then(() => {
+                cart.forEach(cartItem => {
+                    const product = this.props.products.find(p => p.id === cartItem.productId);
+                    if (product) {
+                        const newQuantity = product.quantity - cartItem.quantity;
+                        this.props.dispatch(updateProduct(product.id, product.name, product.image, product.description, product.cost, newQuantity));
+                    }
+                });
+
+                // Clear the cart in the component state and localStorage
+                this.setState({ cart: [] }, () => {
+                    localStorage.removeItem('cart'); // or localStorage.setItem('cart', JSON.stringify([]));
+                    this.setState({ showModal: false }); // Close modal after placing the order
+                });
+            })
+            .catch(error => console.error('Order Placement Error:', error));
     }).catch(error => {
-      console.error('Order Placement Error:', error);
+        console.error('Order Placement Error:', error);
     });
-  };
+};
   
   updateCart = (productId, quantity, cost) => {
     this.setState(prevState => {
